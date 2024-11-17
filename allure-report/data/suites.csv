@@ -1,0 +1,6 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","164","should display Overview as a default tab","","Sun Nov 17 19:25:40 IST 2024","passed","Sun Nov 17 19:25:41 IST 2024","","Verify Overview section","",""
+"","264","should display all the sub menus","","Sun Nov 17 19:26:19 IST 2024","passed","Sun Nov 17 19:26:19 IST 2024","","verify safety page","",""
+"","210","should display all the header tabs","","Sun Nov 17 19:26:19 IST 2024","passed","Sun Nov 17 19:26:19 IST 2024","","verify safety page","",""
+"","3","should launch and display application logo","","Sun Nov 17 19:26:19 IST 2024","passed","Sun Nov 17 19:26:19 IST 2024","","verify safety page","",""
+"","37","should display proper overview content","","Sun Nov 17 19:25:41 IST 2024","passed","Sun Nov 17 19:25:41 IST 2024","","Verify Overview section","",""
