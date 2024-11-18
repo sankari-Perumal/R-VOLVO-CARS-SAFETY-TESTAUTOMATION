@@ -92,7 +92,7 @@ export default class SafetyPage {
 
     public static async isActiveStage() {
         let activeStage: boolean = false;
-        const isAttributePresent = await getAttributeValue(this.submenu.concat(this.submenuOverview.concat(this.submenuParentAttribute)));
+        const isAttributePresent = await getAttributeValue(this.submenu.concat(this.submenuOverview.concat(this.submenuParentAttribute)),'data-active');
         if (isAttributePresent == 'true') {
             activeStage = true;
         }

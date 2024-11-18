@@ -32,7 +32,7 @@ export async function shadowElement(rootElement:string,shadowElement:string):Cha
     return await $(rootElement).shadow$(shadowElement);
 }
 
-export async function getAttributeValue(ele:string) {
+export async function getAttributeValue(ele:string,attributeName:string) {
    await $(ele).waitForDisplayed();
-   return await $(ele).getAttribute('data-active');
+   return await $(ele).getAttribute(attributeName);
 }
