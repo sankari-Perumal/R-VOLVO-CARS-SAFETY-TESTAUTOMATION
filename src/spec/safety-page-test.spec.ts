@@ -1,13 +1,20 @@
 import { browser } from '@wdio/globals';
-import { getEnv } from '../helper/env/env';
 import safetyPage from '../pages/safety-page';
 import testData from '../test-data/testData.json';
-
+import { getEnv } from '../helper/env/env';
 getEnv();
+
 describe('Verify safety page', () => {
 
     beforeAll(async () => {
+        await browser.saveScreenshot('error0.png');
+        // await browser.url(testData.BASEURL);
         await browser.url(process.env.BASEURL!);
+        await browser.saveScreenshot('error1.png');
+        console.log('*******************************', await browser.getTitle());
+        await browser.saveScreenshot('error2.png');
+        console.log('*******************************', await browser.getUrl());
+        await browser.saveScreenshot('error3.png');
         await safetyPage.waitUntilRender();
     })
 
@@ -16,8 +23,8 @@ describe('Verify safety page', () => {
     })
 
     it('should display all the header tabs', async () => {
-       expect(safetyPage.verifyLogoDisplay()).toBeTruthy();
-       expect(await safetyPage.validateHeaderTabs(testData.elementsText.headerTabs)).toBeTrue();
+        expect(safetyPage.verifyLogoDisplay()).toBeTruthy();
+        expect(await safetyPage.validateHeaderTabs(testData.elementsText.headerTabs)).toBeTrue();
     })
 
     it('should display all the sub menus', async () => {

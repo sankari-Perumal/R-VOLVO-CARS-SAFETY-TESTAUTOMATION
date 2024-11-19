@@ -1,10 +1,9 @@
 import { clickElement, isDisplay, shadowElements, elements, getAttributeValue, shadowElement } from '../pages/helper.service'
 import { compareArray, getArrayFromJson } from '../utils/utils';
-
 export default class SafetyPage {
     // Selectors
     static logo = '#sitenav-topbar-wrapper nav div:nth-child(1) div a img';
-    static acceptCookiesBtn = '[id="onetrust-accept-btn-handler"]';
+    static acceptCookiesBtn = '//button[@id="onetrust-accept-btn-handler"]';
     static headerTabsRibbon = "#site-navigation";
     static headerTabsDiv = "#sitenav-topbar-section div ul li button span";
     static submenu = '//nav/div[3]/ul/li';
@@ -17,13 +16,18 @@ export default class SafetyPage {
     static submenuParentAttribute = '/parent::a';
 
     public static async waitUntilRender() {
+        await browser.saveScreenshot('error11.png');
+        await browser.pause(5000);
+        await browser.saveScreenshot('error12.png');
         await this.acceptCookies();
         const element = await shadowElement(this.headerTabsRibbon, this.logo);
         expect((element)).toBeTruthy();
     }
 
     public static async acceptCookies() {
+        await browser.saveScreenshot('error13.png');
         const cookiesDisplay: boolean = await isDisplay((this.acceptCookiesBtn));
+        await browser.saveScreenshot('error14.png');
         if (cookiesDisplay) {
             await clickElement(this.acceptCookiesBtn);
         }

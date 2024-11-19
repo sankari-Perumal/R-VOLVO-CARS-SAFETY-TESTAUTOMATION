@@ -3,12 +3,12 @@ import { getEnv } from '../helper/env/env';
 import safetyPage from '../pages/safety-page';
 import overViewPage from '../pages/overview-page';
 import testData from '../test-data/testData.json';
-
 getEnv();
 describe('Verify Overview section', () => {
 
     beforeAll(async () => {
         await browser.url(process.env.BASEURL!);
+        // await browser.url(testData.BASEURL);
         await safetyPage.waitUntilRender();
     })
 

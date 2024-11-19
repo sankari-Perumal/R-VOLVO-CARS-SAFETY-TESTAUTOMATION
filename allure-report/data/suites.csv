@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5","should launch and display application logo","","Tue Nov 19 11:34:00 IST 2024","passed","Tue Nov 19 11:34:00 IST 2024","","Verify safety page","",""
+"","142","should display all the header tabs","","Tue Nov 19 11:34:00 IST 2024","passed","Tue Nov 19 11:34:00 IST 2024","","Verify safety page","",""
+"","382","should display all the sub menus","","Tue Nov 19 11:34:00 IST 2024","passed","Tue Nov 19 11:34:01 IST 2024","","Verify safety page","",""
+"","85","should display Overview as a default tab","","Tue Nov 19 11:33:58 IST 2024","passed","Tue Nov 19 11:33:58 IST 2024","","Verify Overview section","",""
+"","410","should the man with volvo image is visible on the page","","Tue Nov 19 11:33:59 IST 2024","passed","Tue Nov 19 11:33:59 IST 2024","","Verify Overview section","",""
+"","37","should display proper overview content","","Tue Nov 19 11:33:58 IST 2024","passed","Tue Nov 19 11:33:58 IST 2024","","Verify Overview section","",""

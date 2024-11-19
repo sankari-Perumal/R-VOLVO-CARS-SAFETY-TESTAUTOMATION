@@ -23,7 +23,8 @@ export const config: WebdriverIO.Config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './src/spec/*spec.ts'
+        './src/**/*.spec.ts'
+
     ],
     // Patterns to exclude.
     exclude: [
@@ -51,9 +52,37 @@ export const config: WebdriverIO.Config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }
+    // capabilities: [
+    //     {
+    //         browserName: 'chrome',
+    //         'goog:chromeOptions': {
+    //             args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
+    //         }
+    //     }
+    // ],
+
+    capabilities: [
+        {
+            browserName: 'chrome',
+            // 'goog:chromeOptions': {
+            //     // binary: '/tmp/chrome/linux-131.0.6778.69/chrome-linux64/chrome', // specify path to chrome binary if needed
+            //     // args: ['--headless', '--no-sandbox', '--disable-gpu']
+            //     args: ['--headless', '--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage']
+
+            // }
+            'goog:chromeOptions': {
+                // args: ['--disable-gpu', '--no-sandbox', '--disable-dev-shm-usage', '--user-agent=Chrome/131.0.6778.69' ]
+                args: [
+                    '--headless',
+                    '--disable-gpu',
+                    '--window-size=1920,1080', // Set a proper resolution
+                    '--disable-dev-shm-usage', // Avoid low memory issues
+                    '--no-sandbox',            // Run as root in Docker
+                    '--disable-features=VizDisplayCompositor', // Fix rendering issues
+                    '--user-agent=Chrome/131.0.6778.70'
+                ]
+            }
+        }
     ],
 
     //

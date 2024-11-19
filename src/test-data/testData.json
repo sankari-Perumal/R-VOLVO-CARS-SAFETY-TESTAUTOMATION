@@ -21,5 +21,6 @@
         "manWithVolvoAltTxt":"A man leaning on a Volvo and 2 people on the left walking.",
         "manWithVolvoSrc":"https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/bltc3dbf9fc9bbd010e/66f3f3af4115b10f4d593f26/Safety-Highlights-Hero1-mobile.jpg?branch=prod_alias&auto=webp&h=1500&iar=0&w=1500"
 
-    }
+    },
+    "BASEURL":"https://www.volvocars.com/intl/safety/highlights/"
 }

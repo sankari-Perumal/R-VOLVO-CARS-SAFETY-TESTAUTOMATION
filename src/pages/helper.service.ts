@@ -1,5 +1,5 @@
 export async function element(element:string):ChainablePromiseElement {
-    await $(element).waitForDisplayed();
+    await $(element).waitForDisplayed({timeout:5000});
     return await $(element);
 }
 
@@ -8,7 +8,7 @@ export async function elements(element:string):ChainablePromiseElement {
 }
 
 export async function isDisplay(element:string):Promise<boolean> {
-    await $(element).waitForDisplayed();
+    await $(element).waitForDisplayed({timeout:5000});
     return await $(element).isDisplayed();
 }
 
