@@ -1,3 +1,5 @@
+const {join} =require('path');
+
 export const config: WebdriverIO.Config = {
     //
     // ====================
@@ -79,7 +81,8 @@ export const config: WebdriverIO.Config = {
                     '--disable-dev-shm-usage', // Avoid low memory issues
                     '--no-sandbox',            // Run as root in Docker
                     '--disable-features=VizDisplayCompositor', // Fix rendering issues
-                    '--user-agent=Chrome/131.0.6778.70'
+                    '--user-agent=Chrome/131.0.6778.85',
+                    '--disable-web-security'
                 ]
             }
         }
@@ -119,7 +122,7 @@ export const config: WebdriverIO.Config = {
     // baseUrl: 'http://localhost:8080',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+    waitforTimeout: 300000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -133,7 +136,21 @@ export const config: WebdriverIO.Config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // services: ['visual', 'docker', 'docker', 'azure-devops'],
-
+    services: [
+        [
+          'image-comparison',
+          {
+            baselineFolder: join(process.cwd(), './baseline/'),
+            formatImageName: '{tag}',
+            screenshotPath: join(process.cwd(), './actualDiff/'),
+            savePerInstance: true,
+            autoSaveBaseline: true,
+            blockOutStatusBar: true,
+            blockOutToolBar: true,
+            ignoreNothing:true
+          },
+        ],'devtools'
+      ],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks

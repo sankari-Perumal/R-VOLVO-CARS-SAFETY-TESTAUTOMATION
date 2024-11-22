@@ -1,0 +1,22 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wdio-tests
+spec:
+  replicas: 5 # Number of parallel test pods
+  selector:
+    matchLabels:
+      app: wdio-tests
+  template:
+    metadata:
+      labels:
+        app: wdio-tests
+    spec:
+      containers:
+      - name: wdio-tests
+        image: wdio-tests:latest
+        env:
+          - name: SELENIUM_HUB_URL
+            value: "http://selenium-hub:4444/wd/hub"
+        command: ["npx", "wdio", "run", "wdio.conf.ts"]

@@ -1,4 +1,4 @@
-import { clickElement, isDisplay, shadowElements, elements, getAttributeValue, shadowElement } from '../pages/helper.service'
+import { clickElement, isDisplay, getAttributeValue } from '../pages/helper.service'
 import { compareArray, getArrayFromJson } from '../utils/utils';
 export default class SafetyPage {
     // Selectors
@@ -14,27 +14,66 @@ export default class SafetyPage {
     static submenuResearch = '/a/em[text()="Research"]';
     static submenuHeritage = '/a/em[text()="Heritage"]';
     static submenuParentAttribute = '/parent::a';
+    static safetyHeader = '[data-testid="ModelIntro:model"]';
 
-    public static async waitUntilRender() {
-        await browser.saveScreenshot('error11.png');
-        await browser.pause(5000);
-        await browser.saveScreenshot('error12.png');
-        await this.acceptCookies();
-        const element = await shadowElement(this.headerTabsRibbon, this.logo);
-        expect((element)).toBeTruthy();
+    public static async getLogo() {
+        const element = await $(this.headerTabsRibbon).shadow$(this.logo);
+        await element.waitForDisplayed();
+        return await element;
+    }
+    public static async getacceptCookiesBtn() {
+        const element = await $(this.acceptCookiesBtn);
+        await element.waitForDisplayed();
+        return await element;
     }
 
+    public static async getSubMenuOverview() {
+        return await $(this.submenu.concat(this.submenuOverview));
+    }
+
+    public static async clickOverview() {
+        await clickElement(await this.getSubMenuOverview());
+    }
+    public static async getsubmenuCultureVision() {
+        return await $(this.submenu.concat(this.submenuCultureVision));
+    }
+    public static async getsubmenuFeatures() {
+        return await $(this.submenu.concat(this.submenuFeatures));
+    }
+    public static async getSubMenuChildSafety() {
+        return await $(this.submenu.concat(this.submenuChildsafety));
+    }
+
+    public static async getsubmenuResearch() {
+        return await $(this.submenu.concat(this.submenuResearch));
+    }
+    public static async getsubmenuHeritage() {
+        return await $(this.submenu.concat(this.submenuHeritage));
+    }
+
+    public static async getOverviewParentTag() {
+        return await $(this.submenu.concat(this.submenuOverview.concat(this.submenuParentAttribute)));
+    }
+
+    public static async getSafetyHeader() {
+        return await $(this.safetyHeader);
+    }
+
+    public static async waitUntilRender() {
+        await this.acceptCookies();
+        expect((await this.getLogo)).toBeTruthy();
+    }
+
+
     public static async acceptCookies() {
-        await browser.saveScreenshot('error13.png');
-        const cookiesDisplay: boolean = await isDisplay((this.acceptCookiesBtn));
-        await browser.saveScreenshot('error14.png');
+        const cookiesDisplay: boolean = await isDisplay((await this.getacceptCookiesBtn()));
         if (cookiesDisplay) {
-            await clickElement(this.acceptCookiesBtn);
+            await clickElement(await this.getacceptCookiesBtn());
         }
     }
 
-    public static verifyLogoDisplay() {
-        return isDisplay(this.logo);
+    public static async verifyLogoDisplay() {
+        return await isDisplay(await this.getLogo());
     }
 
     public static async validateHeaderTabs(headerArray: any) {
@@ -54,12 +93,12 @@ export default class SafetyPage {
     }
 
     public static async getHeaderTabs(rooElementLocator: string, shadowElementLocator: string): Promise<string[]> {
-        const element = await shadowElements(rooElementLocator, shadowElementLocator);
+        const element = await $(rooElementLocator).shadow$$(shadowElementLocator)
         let headerArray: string[] = await this.getAllContent(element);
         return headerArray;
     }
     public static async getSubTabs(): Promise<string[]> {
-        const element = await elements(await this.submenu);
+        const element = await $$(this.submenu);
         let subMenu: string[] = await this.getAllContent(element);
         return subMenu;
     }
@@ -74,32 +113,62 @@ export default class SafetyPage {
         return headerArray;
     }
 
-    public static async clickOverview() {
-        await clickElement(this.submenu.concat(this.submenuOverview));
-    }
+
     public static async clickCultureVision() {
-        await clickElement(this.submenu.concat(this.submenuCultureVision));
+        await clickElement(await this.getsubmenuCultureVision());
     }
     public static async clickFeatures() {
-        await clickElement(this.submenu.concat(this.submenuFeatures));
+        await clickElement(await this.getsubmenuFeatures());
     }
     public static async clickChildsafety() {
-        await clickElement(this.submenu.concat(this.submenuChildsafety));
+        await clickElement(await this.getSubMenuChildSafety());
     }
     public static async clickResearch() {
-        await clickElement(this.submenu.concat(this.submenuResearch));
+        await clickElement(await this.getsubmenuResearch());
     }
 
     public static async clickHeritage() {
-        await clickElement(this.submenuHeritage);
+        await clickElement(await this.getsubmenuHeritage());
     }
 
     public static async isActiveStage() {
         let activeStage: boolean = false;
-        const isAttributePresent = await getAttributeValue(this.submenu.concat(this.submenuOverview.concat(this.submenuParentAttribute)),'data-active');
+        const isAttributePresent = await getAttributeValue(this.getOverviewParentTag, 'data-active');
         if (isAttributePresent == 'true') {
             activeStage = true;
         }
         return activeStage;
+    }
+
+    public static async clickOnTab(tabName: string) {
+        switch (tabName.toLowerCase()) {
+            case 'overview':
+                await this.clickOverview();
+                break;
+            case 'culturevision':
+                await this.clickCultureVision();
+                break;
+            case 'features':
+                await this.clickFeatures();
+                break;
+            case 'childsafety':
+                await this.clickChildsafety();
+                break;
+            case 'reasearch':
+                await this.clickResearch();
+                break;
+            case 'heritage':
+                await this.clickHeritage();
+                break;
+
+            default:
+                throw new Error(`Please check the passed ${tabName} tab name`);
+        }
+        await browser.pause(3000);
+    }
+
+    public static async safetyHeadeDisplay() {
+        await browser.pause(3000);
+        return await isDisplay(await this.getSafetyHeader());
     }
 }

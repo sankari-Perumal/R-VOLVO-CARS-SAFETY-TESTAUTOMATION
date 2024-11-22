@@ -2,7 +2,7 @@
     "elementsText": {
         "header": "VOLVO",
         "safety": "Safety",
-        "headerTabs":{
+        "headerTabs": {
             "ourCars": "Our Cars",
             "shop": "Shop",
             "owners": "Owners",
@@ -16,11 +16,27 @@
             "research": "Research",
             "heritage": "Heritage"
         },
-        "overviewContent": "Volvo Cars has been a leader in automotive safety for decades, caring about the world we live in and the people around us. With our Safe Space Technology which includes all the standard safety features in a Volvo car, we help to keep you safe and make you feel safe.",
-        "cultureAndVisionContent": "Safety is so much more than sticking a label to a product. Our Volvo Cars culture aims to ensure that every individual and every team across the company is firmly committed to having safety as their highest priority.",
-        "manWithVolvoAltTxt":"A man leaning on a Volvo and 2 people on the left walking.",
-        "manWithVolvoSrc":"https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/bltc3dbf9fc9bbd010e/66f3f3af4115b10f4d593f26/Safety-Highlights-Hero1-mobile.jpg?branch=prod_alias&auto=webp&h=1500&iar=0&w=1500"
-
+        "overviewBannerText": "Volvo Cars has been a leader in automotive safety for decades, caring about the world we live in and the people around us. With our Safe Space Technology which includes all the standard safety features in a Volvo car, we help to keep you safe and make you feel safe.",
+        "cultureAndVisionBannerText": "Safety is so much more than sticking a label to a product. Our Volvo Cars culture aims to ensure that every individual and every team across the company is firmly committed to having safety as their highest priority.",
+        "featuresBannerText": "which includes all the standard safety features in a Volvo car, helps to keep you safe and make you feel safe. Offering a mix of new intelligent and long-established safety features, we’re aiming for zero collisions.",
+        "childSafetyBannerText": "From child seats to booster cushions, at Volvo Cars, we’ve been delivering child safety products since the 1970s, constantly seeking to improve safety for children when they travel in our cars.",
+        "researchBannerText": "We've been building our safety knowledge through decades of industry-leading research in real-world scenarios. Since the 1970s, we have analysed over 50,000 cars from real-world accidents involving over 80,000 occupants.",
+        "heritageBannerText": "We have invented some of the most important features in the history of car safety. Our technology makes a real difference, and there’s more to come.",
+        "manWithVolvoAltTxt": "A man leaning on a Volvo and 2 people on the left walking.",
+        "manWithVolvoSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/bltc3dbf9fc9bbd010e/66f3f3af4115b10f4d593f26/Safety-Highlights-Hero1-mobile.jpg?branch=prod_alias&auto=webp&h=1500&iar=0&w=1500",
+        "employeeWithEquipSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/blt80016d803b7046f5/66fa6990a616f709f73a96e2/Safety-Culture&Vision-Hero1.jpg?branch=prod_alias&auto=webp&h=1096&iar=0&w=2560",
+        "employeeWithEquipAltTxt": "Three people having a chat wearing safety gear and work overalls",
+        "digitalRenderingImgAltTxt": "A digital rendering of objects on a blue surface.",
+        "digitalRenderingImgSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/blte65426a6d0eb4f17/66fa71aa6dbd3a92eb2571d4/LIDAR_image.jpg?branch=prod_alias&auto=webp&iar=0&w=3840&imdensity=1"
     },
-    "BASEURL":"https://www.volvocars.com/intl/safety/highlights/"
+    "url": {
+        "root":"https://www.volvocars.com/intl/safety/",
+        "overview": "highlights/",
+        "cultureVision": "culture-vision/",
+        "features": "features/",
+        "childsafety": "child-safety/",
+        "research": "research/",
+        "heritage": "heritage/"
+    },
+    "BASEURL": "https://www.volvocars.com/intl/safety/highlights/"
 }

@@ -8,7 +8,6 @@ describe('Verify Overview section', () => {
 
     beforeAll(async () => {
         await browser.url(process.env.BASEURL!);
-        // await browser.url(testData.BASEURL);
         await safetyPage.waitUntilRender();
     })
 

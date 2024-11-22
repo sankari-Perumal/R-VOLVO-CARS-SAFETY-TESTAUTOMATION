@@ -13,17 +13,26 @@
   "description": "",
   "devDependencies": {
     "@types/jasmine": "^5.1.4",
+    "@wdio/allure-reporter": "^9.2.14",
     "@wdio/cli": "^9.2.14",
     "@wdio/jasmine-framework": "^9.2.14",
     "@wdio/local-runner": "^9.2.15",
-    "wdio-wait-for": "^3.0.11",
-    "wdio-chromedriver-service": "^8.1.1",
+    "@wdio/mocha-framework": "^9.2.8",
     "@wdio/spec-reporter": "^9.2.14",
+    "@wdio/visual-service": "^6.2.2",
+    "allure-commandline": "^2.32.0",
     "chromedriver": "^131.0.0",
     "cross-env": "^7.0.3",
+    "devtools-protocol": "^0.0.1383960",
     "dotenv": "^16.4.5",
     "rimraf": "^6.0.1",
-    "allure-commandline": "^2.32.0",
-    "@wdio/allure-reporter": "^9.2.14"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3",
+    "wdio-chromedriver-service": "^8.1.1",
+    "wdio-image-comparison-service": "^5.0.3",
+    "wdio-wait-for": "^3.0.11"
+  },
+  "dependencies": {
+    "@wdio/devtools-service": "^8.40.2"
   }
 }
