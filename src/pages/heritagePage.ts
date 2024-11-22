@@ -7,13 +7,13 @@ export default class HeritagePage {
     public static async getHeritageInfo() {
         const element = await $(this.heritageInfo);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async getNilsbohlinImg() {
         const element = await $(this.nilsbohlinImg);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async heritageInfoContent() {

@@ -13,7 +13,7 @@ export default class ChildSafetyPage {
     public static async getChildWithVolvo() {
         const element = await $(this.childWithVolvo);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
     
     public static async childsafetyInfoContent() {

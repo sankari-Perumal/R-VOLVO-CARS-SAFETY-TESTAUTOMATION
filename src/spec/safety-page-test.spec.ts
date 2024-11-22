@@ -12,6 +12,7 @@ getEnv();
 import { clearStorage } from '../utils/clearSessions';
 import { monitorNetwork } from '../utils/monitorNetwork';
 import { waitForPageContents } from '../utils/waitForPageLoad';
+import { scrollToBottomOfThePage } from '../pages/helper.service';
 
 describe('Verify safety page', () => {
 
@@ -25,14 +26,15 @@ describe('Verify safety page', () => {
         await browser.pause(2000);
         await waitForPageContents(browser);
         await browser.pause(5000);
+
     })
 
     it('should launch and display application logo', async () => {
-        expect(safetyPage.verifyLogoDisplay()).toBeTruthy();
+        expect(await safetyPage.verifyLogoDisplay()).toBeTruthy();
     })
 
     it('should display all the header tabs', async () => {
-        expect(safetyPage.verifyLogoDisplay()).toBeTruthy();
+        expect(await safetyPage.verifyLogoDisplay()).toBeTruthy();
         expect(await safetyPage.validateHeaderTabs(testData.elementsText.headerTabs)).toBeTrue();
     })
 
@@ -62,9 +64,36 @@ describe('Verify safety page', () => {
 
     it('should display back to top button and should function properly', async () => {
         await safetyPage.clickOnTab('overview');
-        await overviewPage.scrollToBottomOfThePage();
+        await scrollToBottomOfThePage();
         expect(await overviewPage.backToTopElementDisplay()).toBeTrue();
-        await overviewPage.backToTopAction();        
+        await overviewPage.backToTopAction();
         expect(await safetyPage.safetyHeadeDisplay()).toBeTrue();
+    })
+
+    // it('should be able to expand our cars top bar menu section and display fields', async () => {
+    //     expect(await reasearchPage.verifyShowMoreBtnDisplay()).toBeTrue();
+    //     await reasearchPage.clickShowMoreBtn();
+    //     console.log('0pppppppppp', await reasearchPage.verifyQuetionaryAreaExpand());
+    //     expect(await reasearchPage.verifyQuetionaryAreaExpand()).toBe('true');
+    //     console.log('----------------', await reasearchPage.verifyShowLessBtn());
+    //     expect(await reasearchPage.verifyShowLessBtn()).toBeTrue();
+    // })
+
+    // it('our cars should disply panel with options and close', async () => {
+    //     await safetyPage.ourCarsClick();
+    //     expect(await safetyPage.verifyPanelDisplay()).toBe('false');
+    //     expect(await safetyPage.verifyCloseBtnDisplay()).toBeTrue();
+    //     await safetyPage.closeBtnClick();
+    //     expect(await safetyPage.verifyPanelDisplay()).toBe('true');
+
+
+    // })
+
+    it('should display all recharge models at the bottom of the page', async () => {
+        expect(await safetyPage.isAllRechargeModelsPanelDisplay()).toBeTrue();
+        expect(await safetyPage.getAllRechargeModelsHeaderContent()).toContain(testData.elementsText.allRechargeModelsHeader);
+        expect(await safetyPage.isPrevButtonDisplay()).toBeTrue();
+        expect(await safetyPage.isNxtButtonDisplay()).toBeTrue();
+        expect(await safetyPage.isAllModelsDisplay()).toBeTrue();
     })
 });

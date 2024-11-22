@@ -9,19 +9,19 @@ export default class SafetyPage {
     public static async getOverviewInfo() {
         const element = await $(this.overviewInfo);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async getManWithVolvoImg() {
         const element = await $(this.manWithVolvoImg);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async getBackToTopBtn() {
         const element = await $(this.backToTopRoot).shadow$(this.backToTopBtn);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async overviewInfoContent() {
@@ -41,17 +41,9 @@ export default class SafetyPage {
         return getAttributeValue(await this.getManWithVolvoImg(), 'src');
     }
 
-    public static async scrollToBottomOfThePage() {
-        await browser.execute(() => {
-            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-        });
-        await browser.pause(3000);
-    }
-
     public static async backToTopAction() {
         await clickElement(await this.getBackToTopBtn());
         await browser.pause(3000);
-
     }
 
     public static async backToTopElementDisplay() {

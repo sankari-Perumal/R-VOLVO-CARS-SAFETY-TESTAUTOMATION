@@ -7,13 +7,13 @@ export default class CultureAndVisionPage {
     public static async getCultureAndVisionInfo() {
         const element = await $(this.cultureAndVisionInfo);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async getEmployeesWithEquip() {
         const element = await $(this.employeesWithEquip);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async cultureAndVisonInfoContent() {

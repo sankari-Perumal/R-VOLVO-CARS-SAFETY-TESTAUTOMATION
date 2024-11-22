@@ -7,13 +7,13 @@ export default class FeaturesPage {
     public static async getFeaturesInfo() {
         const element = await $(this.featuresInfo);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async getDigitalRenderingImg() {
         const element = await $(this.digitalRenderingImg);
         await element.waitForDisplayed();
-        return await element;
+        return element;
     }
 
     public static async featuresInfoContent() {

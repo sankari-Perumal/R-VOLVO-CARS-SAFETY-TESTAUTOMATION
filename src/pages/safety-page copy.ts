@@ -32,7 +32,6 @@ export default class SafetyPage {
         await element.waitForDisplayed();
         return element;
     }
-    
     public static async getacceptCookiesBtn() {
         const element = await $(this.acceptCookiesBtn);
         await element.waitForDisplayed();
@@ -42,11 +41,9 @@ export default class SafetyPage {
     public static async getsubmenuCultureVision() {
         return await $(this.submenu.concat(this.submenuCultureVision));
     }
-
     public static async getsubmenuFeatures() {
         return await $(this.submenu.concat(this.submenuFeatures));
     }
-
     public static async getSubMenuChildSafety() {
         return await $(this.submenu.concat(this.submenuChildsafety));
     }
@@ -54,7 +51,6 @@ export default class SafetyPage {
     public static async getsubmenuResearch() {
         return await $(this.submenu.concat(this.submenuResearch));
     }
-
     public static async getsubmenuHeritage() {
         return await $(this.submenu.concat(this.submenuHeritage));
     }
@@ -70,7 +66,25 @@ export default class SafetyPage {
     public static async getSafetyHeader() {
         return await $(this.safetyHeader);
     }
-    
+
+    public static async getOurCars() {
+        const element = await $(this.headerTabsRibbon).shadow$(this.ourCarsTopmenu);
+        await element.waitForDisplayed();
+        return element;
+    }
+
+    public static async getCloseBtn() {
+        const element = await $(this.headerTabsRibbon).shadow$(this.topMenuPanelCloseBtn);
+        await element.waitForDisplayed();
+        return element;
+    }
+
+    public static async getOurCarsPanel() {
+        const element = await $(this.headerTabsRibbon).shadow$(this.ourCarsPanel);
+        await element.waitForDisplayed();
+        return element;
+    }
+
     public static async isAllRechargeModelsPanelDisplay() {
        return await $(this.allRechargeModelPanel).isDisplayed();
     }
@@ -93,6 +107,7 @@ export default class SafetyPage {
         return await element;
     }
 
+
     public static async getAllRechargeModelsHeaderContent() {
         return await getText(await this.getAllRechargeModelsHeader());
 
@@ -102,19 +117,17 @@ export default class SafetyPage {
         return await $$(this.modelImg).length == 9 ? true : false;
     }
 
+
     //click
     public static async clickCultureVision() {
         await clickElement(await this.getsubmenuCultureVision());
     }
-
     public static async clickFeatures() {
         await clickElement(await this.getsubmenuFeatures());
     }
-
     public static async clickChildsafety() {
         await clickElement(await this.getSubMenuChildSafety());
     }
-
     public static async clickResearch() {
         await clickElement(await this.getsubmenuResearch());
     }
@@ -126,7 +139,12 @@ export default class SafetyPage {
     public static async clickOverview() {
         await clickElement(await this.getSubMenuOverview());
     }
-    
+
+    public static async ourCarsClick() {
+        await browser.pause(3000);
+        await clickElement(await this.getOurCars());
+    }
+
     public static async clickOnTab(tabName: string) {
         switch (tabName.toLowerCase()) {
             case 'overview':
@@ -154,10 +172,27 @@ export default class SafetyPage {
         await browser.pause(3000);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static async waitUntilRender() {
         await this.acceptCookies();
         expect((await this.getLogo)).toBeTruthy();
     }
+
 
     public static async acceptCookies() {
         const cookiesDisplay: boolean = await isDisplay((await this.getacceptCookiesBtn()));
@@ -191,7 +226,6 @@ export default class SafetyPage {
         let headerArray: string[] = await this.getAllContent(element);
         return headerArray;
     }
-
     public static async getSubTabs(): Promise<string[]> {
         const element = await $$(this.submenu);
         let subMenu: string[] = await this.getAllContent(element);
@@ -208,6 +242,9 @@ export default class SafetyPage {
         return headerArray;
     }
 
+
+
+
     public static async isActiveStage() {
         let activeStage: boolean = false;
         const isAttributePresent = await getAttributeValue(await this.getOverviewParentTag, 'data-active');
@@ -218,14 +255,36 @@ export default class SafetyPage {
         return activeStage;
     }
 
+
+
     public static async safetyHeadeDisplay() {
         await browser.pause(3000);
         return await isDisplay(await this.getSafetyHeader());
     }
 
+
+
+    public static async verifyCloseBtnDisplay() {
+        return await isDisplay(await this.getCloseBtn());
+    }
+
+
+    public static async verifyPanelDisplay() {
+        return await getAttributeValue(await this.getOurCarsPanel(), 'aria-hidden');
+    }
+    // public static async closeBtnClick() {
+    //     await clickElement(await this.getCloseBtn());
+    // }
+
+
+    // public static async isAllRechargeModelPanelDisplay() {
+    //     return await (await this.getAllRechargeModelsPanesl()).isDisplayed();
+    // }
+
     public static async isPrevButtonDisplay() {
         return await isDisplay(await this.getPrevBtn());
     }
+
 
     public static async isNxtButtonDisplay() {
         return await isDisplay(await this.getNxtBtn());
