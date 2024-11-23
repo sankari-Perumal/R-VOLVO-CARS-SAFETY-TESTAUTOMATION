@@ -22,13 +22,16 @@ describe('Verify Research page', () => {
     })
 
     it('should display video with its appropriate attributes', async () => {
+        await safetyPage.clickOnTab('reasearch');
         await browser.pause(5000);
         expect(await reasearchPage.verifyVideoDisplay()).toBeTrue();
         expect(await reasearchPage.verifyWatchFilmBtnDisplay()).toBeTrue();
         expect(await reasearchPage.verifyPauseBtnDisplay()).toBeTrue();
+        await safetyPage.clickOnTab('heritage');
     })
     
     it('show more should expand area and display showless action', async () => {
+        await safetyPage.clickOnTab('reasearch');
         expect(await reasearchPage.verifyShowMoreBtnDisplay()).toBeTrue();
         await reasearchPage.clickShowMoreBtn();
         expect(await reasearchPage.verifyQuetionaryAreaExpand()).toBe('true');

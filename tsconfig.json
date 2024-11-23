@@ -11,7 +11,8 @@
             "node",
             "jasmine",
             "@wdio/globals/types",
-            "@wdio/jasmine-framework","@wdio/devtools-service",
+            "@wdio/jasmine-framework",
+            "@wdio/devtools-service",
             "devtools-protocol"
         ],
         "skipLibCheck": true,

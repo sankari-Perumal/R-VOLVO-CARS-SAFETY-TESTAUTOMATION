@@ -80,6 +80,7 @@ export default class FeaturesPage {
     }
 
     public static async verifyShowMoreBtnDisplay() {
+        await browser.pause(4000);
         return await isDisplay((await this.getShowMoreBtn()));
     }
 
