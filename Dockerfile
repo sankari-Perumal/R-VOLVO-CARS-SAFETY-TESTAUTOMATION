@@ -1,5 +1,5 @@
 FROM node:18-slim
-# Install Chromium and dependencies
+    # Install Chromium and dependencies
 RUN apt-get update && apt-get install -y \
 wget \
 curl \
@@ -17,10 +17,6 @@ chromium \
 --no-install-recommends && \
 apt-get clean && \
 rm -rf /var/lib/apt/lists/*
-
-# Install global dependencies
-RUN npm install -g allure-commandline
-
 # Set working directory
 WORKDIR /usr/src/app
 
