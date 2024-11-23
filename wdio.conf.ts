@@ -15,8 +15,8 @@ export const config: WebdriverIO.Config = {
             browserName: 'chrome',
             'goog:chromeOptions': {
                 args: [
-                    '--user-agent=Chrome/131.0.6778.86',
-                    '--headless',
+                    // '--user-agent=Chrome/131.0.6778.85',
+                    // '--headless',
                     '--disable-gpu',
                     '--window-size=1920,1080', // Set a proper resolution
                     '--disable-dev-shm-usage', // Avoid low memory issues

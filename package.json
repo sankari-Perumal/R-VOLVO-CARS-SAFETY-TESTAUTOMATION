@@ -10,7 +10,7 @@
   "keywords": [],
   "author": "SIVASANKARI PERUMAL",
   "license": "ISC",
-  "description": "",
+  "description": "test scripts automation with volvo",
   "devDependencies": {
     "@types/jasmine": "^5.1.4",
     "@wdio/cli": "^9.2.14",
