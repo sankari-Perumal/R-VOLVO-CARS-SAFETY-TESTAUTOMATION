@@ -2,9 +2,9 @@
 
 ## 1. Local setup
 ### 1.1 Tools
-1. IDE: Download and install Visual Studio Code 
-2. Download and install nodejs LTS 
-3. Download and install Docker
+1. IDE: Download and install Visual Studio Code https://code.visualstudio.com/download
+2. Download and install nodejs LTS https://nodejs.org/en/download/prebuilt-installer
+3. Download and install Docker https://www.docker.com/get-started/
 4. Clone the project and open it in your IDE
 5. In your project folder, run `npm install` to install the dependencies
 
