@@ -1,0 +1,38 @@
+
+spec file name : safety-overview-page-test.spec.ts
+--------------------------------------------------
+    - #1 should display proper overview content
+            -> validate the overview banner text
+    - #2 should the man with volvo image is visible on the page
+            -> verify the display of man with volvo image
+
+spec file name : safety-page-test.spec.ts
+-----------------------------------------
+    - #1 should launch and display application logo
+            -> verify the volvo logo is displayed or not
+    - #2 should display all the header tabs
+            -> verify Our Cars, Shop, Owners and About us headers are displaying or not
+    - #3 should display all the sub menus
+            -> verify Overview, Culture & vision, Features, Child safety, Research and Heritage are displaying or not
+    - #4 should navigate and display urls and banner content
+            -> navigates each headers, then checks banner text and urls as well
+    - #5 should display back to top button and should function properly
+            -> verify the functions of Back to top button
+            -> should move to the top of the page
+    - #6 should display all recharge models at the bottom of the page
+            -> checks for the all recharge models content
+
+spec file name : safety-research-page-test.spec.ts
+--------------------------------------------------
+    - #1 should display video with its appropriate attributes
+            -> checks the video for its pause and watch film buttons
+    - #2 show more should expand area and display showless action
+            -> verifies the show more and show less content options
+
+spec file name : visual-regression-test.spec.ts
+-----------------------------------------------
+    - #1 should compare an element with the baseline
+            -> verifies the pic of Nils Bohlin in heritage page
+    - #2 should compare fullpage screenshot
+            -> checks the full screen images of Overviw
+

@@ -70,25 +70,6 @@ describe('Verify safety page', () => {
         expect(await safetyPage.safetyHeadeDisplay()).toBeTrue();
     })
 
-    // it('should be able to expand our cars top bar menu section and display fields', async () => {
-    //     expect(await reasearchPage.verifyShowMoreBtnDisplay()).toBeTrue();
-    //     await reasearchPage.clickShowMoreBtn();
-    //     console.log('0pppppppppp', await reasearchPage.verifyQuetionaryAreaExpand());
-    //     expect(await reasearchPage.verifyQuetionaryAreaExpand()).toBe('true');
-    //     console.log('----------------', await reasearchPage.verifyShowLessBtn());
-    //     expect(await reasearchPage.verifyShowLessBtn()).toBeTrue();
-    // })
-
-    // it('our cars should disply panel with options and close', async () => {
-    //     await safetyPage.ourCarsClick();
-    //     expect(await safetyPage.verifyPanelDisplay()).toBe('false');
-    //     expect(await safetyPage.verifyCloseBtnDisplay()).toBeTrue();
-    //     await safetyPage.closeBtnClick();
-    //     expect(await safetyPage.verifyPanelDisplay()).toBe('true');
-
-
-    // })
-
     it('should display all recharge models at the bottom of the page', async () => {
         expect(await safetyPage.isAllRechargeModelsPanelDisplay()).toBeTrue();
         expect(await safetyPage.getAllRechargeModelsHeaderContent()).toContain(testData.elementsText.allRechargeModelsHeader);

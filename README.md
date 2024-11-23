@@ -37,7 +37,10 @@
     -> `rimraf ./allure-report ./allure-results` : delete the exisiting allure files
     -> `allure generate --clean && allure open` : to generate and open allure report
 3. Docker
-    -> docker build -t <replace_with_suitable_image_name> .  : To Create/build docker image
+    -> docker build -t <replace_with_suitable_image_name> .  : to Create/build docker image
     -> docker run --rm -ti <replace_with_your_docker_image_name> : to run the docker image
     -> docker save -o <replace_with_suitable_file_name>.tar <replace_with_your_docker_image_name>:<replace_with_suitable_tag_name>
     -> docker load -i <replace_with_file_name_from_the_above_step>.tar
+
+## 5. Implemented Scenarios
+    -> `scenarios.txt` : can find the information about the implemented scenarios
