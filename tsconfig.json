@@ -30,6 +30,7 @@
         "src/spec",
         "src/pages",
         "wdio.conf.ts",
-        "src/helper/env/env"
+        "src/helper/env/env",
+        "wdio.d.ts"
     ]
 }

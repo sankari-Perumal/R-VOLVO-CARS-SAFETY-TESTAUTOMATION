@@ -2,7 +2,7 @@
   "name": "r-volvo-cars-safety-testautomation",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": { 
+  "scripts": {
     "pretest": "rimraf ./allure-report ./allure-results",
     "test": "cross-env ENV=test npx wdio run wdio.conf.ts",
     "allure-report": "allure generate --clean && allure open"
@@ -26,9 +26,12 @@
     "dotenv": "^16.4.5",
     "rimraf": "^6.0.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.6.3","devtools-protocol": "^0.0.1383960"
+    "typescript": "^5.6.3",
+    "devtools-protocol": "^0.0.1383960",
+    "wdio-image-comparison-service": "^5.0.3"
   },
   "dependencies": {
-    "chrome-launcher": "^1.1.2","@wdio/devtools-service": "^8.40.2"
+    "chrome-launcher": "^1.1.2",
+    "@wdio/devtools-service": "^8.40.2"
   }
 }

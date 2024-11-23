@@ -1,4 +1,4 @@
-// const {join} =require('path');
+const {join} =require('path');
 
 export const config: WebdriverIO.Config = {
     runner: 'local',
@@ -15,7 +15,7 @@ export const config: WebdriverIO.Config = {
             browserName: 'chrome',
             'goog:chromeOptions': {
                 args: [
-                    '--user-agent=Chrome/131.0.6778.86',                    
+                    '--user-agent=Chrome/131.0.6778.86',
                     '--headless',
                     '--disable-gpu',
                     '--window-size=1920,1080', // Set a proper resolution
@@ -33,23 +33,23 @@ export const config: WebdriverIO.Config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [
-        
-    // "wdio-image-comparison-service": "^5.0.3",
-        // [
-        //   'image-comparison',
-        //   {
-        //     baselineFolder: join(process.cwd(), './baseline/'),
-        //     formatImageName: '{tag}',
-        //     screenshotPath: join(process.cwd(), './actualDiff/'),
-        //     savePerInstance: true,
-        //     autoSaveBaseline: true,
-        //     blockOutStatusBar: true,
-        //     blockOutToolBar: true,
-        //     ignoreNothing:true
-        //   },
-        // ],
+
+       [
+            'image-comparison',
+            {
+                baselineFolder: join(process.cwd(), './baseline/'),
+                formatImageName: '{tag}',
+                screenshotPath: join(process.cwd(), './actualDiff/'),
+                savePerInstance: true,
+                autoSaveBaseline: true,
+                blockOutStatusBar: true,
+                blockOutToolBar: true,
+                ignoreNothing: true,
+                fullPageScrollTimeout: 2000 
+            },
+        ],
         'devtools'
-      ],
+    ],
     framework: 'jasmine',
     reporters: [
         ['allure', {
