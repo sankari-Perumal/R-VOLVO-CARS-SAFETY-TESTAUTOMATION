@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue, } from './helper.service'
 
 export default class ChildSafetyPage {
+    
     static childsafetyInfo='[data-auto-id="aboutUsModelIntro-2-0"] div div p';
     static childWithVolvo='[data-auto-id="aboutUsPromotionalHero-3-0"] div div picture';
 

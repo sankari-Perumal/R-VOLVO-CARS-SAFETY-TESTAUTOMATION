@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue, clickElement } from './helper.service'
 
 export default class SafetyPage {
+    
     static overviewInfo = '[data-auto-id="aboutUsModelIntro-2-0"] [data-testid="ModelIntro:description"]';
     static manWithVolvoImg = '[id="aboutUsPromotionalHero-3-0"] div div picture img';
     static backToTopRoot = '[id="vcc-site-footer"]';

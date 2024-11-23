@@ -23,10 +23,10 @@
         "researchBannerText": "We've been building our safety knowledge through decades of industry-leading research in real-world scenarios. Since the 1970s, we have analysed over 50,000 cars from real-world accidents involving over 80,000 occupants.",
         "heritageBannerText": "We have invented some of the most important features in the history of car safety. Our technology makes a real difference, and there’s more to come.",
         "manWithVolvoAltTxt": "A man leaning on a Volvo and 2 people on the left walking.",
+        "employeeWithEquipAltTxt": "Three people having a chat wearing safety gear and work overalls",
+        "digitalRenderingImgAltTxt": "A digital rendering of objects on a blue surface.",       
         "manWithVolvoSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/bltc3dbf9fc9bbd010e/66f3f3af4115b10f4d593f26/Safety-Highlights-Hero1-mobile.jpg?branch=prod_alias&auto=webp&h=1500&iar=0&w=1500",
         "employeeWithEquipSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/blt80016d803b7046f5/66fa6990a616f709f73a96e2/Safety-Culture&Vision-Hero1.jpg?branch=prod_alias&auto=webp&h=1096&iar=0&w=2560",
-        "employeeWithEquipAltTxt": "Three people having a chat wearing safety gear and work overalls",
-        "digitalRenderingImgAltTxt": "A digital rendering of objects on a blue surface.",
         "digitalRenderingImgSrc": "https://www.volvocars.com/images/cs/v3/assets/blt066aeed1a18c768c/blte65426a6d0eb4f17/66fa71aa6dbd3a92eb2571d4/LIDAR_image.jpg?branch=prod_alias&auto=webp&iar=0&w=3840&imdensity=1",
         "allRechargeModelsHeader":"All recharge models"
     },
@@ -38,6 +38,5 @@
         "childsafety": "child-safety/",
         "research": "research/",
         "heritage": "heritage/"
-    },
-    "BASEURL": "https://www.volvocars.com/intl/safety/highlights/"
+    }
 }

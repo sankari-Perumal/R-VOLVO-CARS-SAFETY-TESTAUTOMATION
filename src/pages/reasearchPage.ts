@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue,clickElement } from './helper.service'
 
 export default class FeaturesPage {
+   
     static researchInfo = '[data-auto-id="aboutUsModelIntro-2-0"] div div[data-testid="ModelIntro:description"] p';
     static volvoTestingPlantImg = '[data-auto-id="aboutUsPromotionalHero-3-0"] div div picture';
     static videoContent = '[data-auto-id="aboutUsVideoWithPreview-0-2"] div div video';

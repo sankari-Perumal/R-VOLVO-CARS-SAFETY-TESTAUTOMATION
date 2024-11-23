@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue, } from './helper.service'
 
 export default class CultureAndVisionPage {
+    
     static cultureAndVisionInfo = '[data-auto-id="aboutUsModelIntro-2-0"] [data-testid="ModelIntro:description"]';
     static employeesWithEquip = '[id="aboutUsPromotionalHero-3-0"] div div picture img';
 

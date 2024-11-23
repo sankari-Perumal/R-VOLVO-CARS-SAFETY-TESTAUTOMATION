@@ -1,6 +1,7 @@
 import { clickElement, isDisplay, getAttributeValue, getText } from '../pages/helper.service'
 import { compareArray, getArrayFromJson } from '../utils/utils';
 export default class SafetyPage {
+
     // Selectors
     static logo = '#sitenav-topbar-wrapper nav div:nth-child(1) div a img';
     static acceptCookiesBtn = '//button[@id="onetrust-accept-btn-handler"]';
@@ -25,14 +26,13 @@ export default class SafetyPage {
     static nxtBtn = '[data-autoid="carousel-next-button"]';
     static modelList = '[id=":r0:"]';
     static modelImg = '[data-autoid="carousel:card"]';
-   
-    // Elements
+
     public static async getLogo() {
         const element = await $(this.headerTabsRibbon).shadow$(this.logo);
         await element.waitForDisplayed();
         return element;
     }
-    
+
     public static async getacceptCookiesBtn() {
         const element = await $(this.acceptCookiesBtn);
         await element.waitForDisplayed();
@@ -70,9 +70,9 @@ export default class SafetyPage {
     public static async getSafetyHeader() {
         return await $(this.safetyHeader);
     }
-    
+
     public static async isAllRechargeModelsPanelDisplay() {
-       return await $(this.allRechargeModelPanel).isDisplayed();
+        return await $(this.allRechargeModelPanel).isDisplayed();
     }
 
     public static async getAllRechargeModelsHeader() {
@@ -126,7 +126,7 @@ export default class SafetyPage {
     public static async clickOverview() {
         await clickElement(await this.getSubMenuOverview());
     }
-    
+
     public static async clickOnTab(tabName: string) {
         switch (tabName.toLowerCase()) {
             case 'overview':
@@ -166,8 +166,22 @@ export default class SafetyPage {
         }
     }
 
+    // Display checks
     public static async verifyLogoDisplay() {
         return await isDisplay(await this.getLogo());
+    }
+
+    public static async safetyHeadeDisplay() {
+        await browser.pause(3000);
+        return await isDisplay(await this.getSafetyHeader());
+    }
+
+    public static async isPrevButtonDisplay() {
+        return await isDisplay(await this.getPrevBtn());
+    }
+
+    public static async isNxtButtonDisplay() {
+        return await isDisplay(await this.getNxtBtn());
     }
 
     public static async validateHeaderTabs(headerArray: any) {
@@ -208,26 +222,13 @@ export default class SafetyPage {
         return headerArray;
     }
 
+    // check page active
     public static async isActiveStage() {
         let activeStage: boolean = false;
         const isAttributePresent = await getAttributeValue(await this.getOverviewParentTag, 'data-active');
-        console.log(await isAttributePresent,'shdasdha7777777777777777777777777777');
         if (await isAttributePresent == 'true') {
             activeStage = true;
         }
         return activeStage;
-    }
-
-    public static async safetyHeadeDisplay() {
-        await browser.pause(3000);
-        return await isDisplay(await this.getSafetyHeader());
-    }
-
-    public static async isPrevButtonDisplay() {
-        return await isDisplay(await this.getPrevBtn());
-    }
-
-    public static async isNxtButtonDisplay() {
-        return await isDisplay(await this.getNxtBtn());
     }
 }

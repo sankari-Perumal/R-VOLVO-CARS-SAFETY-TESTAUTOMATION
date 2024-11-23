@@ -1,4 +1,5 @@
 import { browser } from '@wdio/globals';
+import { getEnv } from '../helper/env/env';
 import safetyPage from '../pages/safety-page';
 import overviewPage from '../pages/overview-page';
 import cultureAndVisionPage from '../pages/cultureAndVisionPage';
@@ -7,15 +8,14 @@ import childSafetyPage from '../pages/childSafetyPage';
 import reasearchPage from '../pages/reasearchPage';
 import heritagePage from '../pages/heritagePage';
 import testData from '../test-data/testData.json';
-import { getEnv } from '../helper/env/env';
-getEnv();
 import { clearStorage } from '../utils/clearSessions';
 import { monitorNetwork } from '../utils/monitorNetwork';
 import { waitForPageContents } from '../utils/waitForPageLoad';
 import { scrollToBottomOfThePage } from '../pages/helper.service';
 
-describe('Verify safety page', () => {
+getEnv();
 
+describe('Verify safety page', () => {
     beforeAll(async () => {
         await monitorNetwork(browser);
         await browser.url(process.env.BASEURL!);
@@ -26,7 +26,6 @@ describe('Verify safety page', () => {
         await browser.pause(2000);
         await waitForPageContents(browser);
         await browser.pause(5000);
-
     })
 
     it('should launch and display application logo', async () => {
@@ -61,7 +60,7 @@ describe('Verify safety page', () => {
         expect(await browser.getUrl()).toBe(testData.url.root.concat(testData.url.heritage));
         expect(await heritagePage.heritageInfoContent()).toContain(testData.elementsText.heritageBannerText);
     })
-
+    
     it('should display back to top button and should function properly', async () => {
         await safetyPage.clickOnTab('overview');
         await scrollToBottomOfThePage();

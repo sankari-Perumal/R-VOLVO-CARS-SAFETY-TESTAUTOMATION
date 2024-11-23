@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue, } from './helper.service'
 
 export default class FeaturesPage {
+    
     static featuresInfo='[id="aboutUsTextStatement-0-1"] div div p span.ej';
     static digitalRenderingImg='(//*[@data-auto-id="image-with-text"])[1]/div/div/div/div/picture/img';
 

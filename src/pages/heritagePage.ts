@@ -1,6 +1,7 @@
 import { isDisplay, getText, getAttributeValue, } from './helper.service'
 
 export default class HeritagePage {
+    
     static heritageInfo='[data-auto-id="aboutUsModelIntro-2-0"] div div p';
     static nilsbohlinImg='(//*[@data-auto-id="image-with-text"])[1]/div/div/div/div/picture/img';
 

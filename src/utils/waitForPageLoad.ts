@@ -1,5 +1,5 @@
 export const waitForPageContents = async (browser: WebdriverIO.Browser) => {
-    console.log('*******************PAGE CONTENTS AND IMAGES ARE STARTED LOADING*******************');
+    console.log('***************PAGE CONTENTS AND IMAGES ARE STARTED LOADING***************');
     await browser.waitUntil(() => {
         return browser.execute(() => {
             return Array.from(document.querySelectorAll('img')).some(
@@ -7,8 +7,8 @@ export const waitForPageContents = async (browser: WebdriverIO.Browser) => {
             );
         });
     }, {
-        timeout: 100000, // 20 seconds
-        timeoutMsg: 'Page did not load properly.',
+        timeout: 100000, 
+        timeoutMsg: '***************Page did not load properly.***************',
     });
-    console.log('*******************PAGE CONTENTS AND IMAGES ARE LOADED*******************');
+    console.log('***************PAGE CONTENTS AND IMAGES ARE LOADED***************');
 };

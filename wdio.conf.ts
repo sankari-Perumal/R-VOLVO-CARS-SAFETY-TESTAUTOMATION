@@ -1,4 +1,4 @@
-const {join} =require('path');
+const { join } = require('path');
 
 export const config: WebdriverIO.Config = {
     runner: 'local',
@@ -15,8 +15,8 @@ export const config: WebdriverIO.Config = {
             browserName: 'chrome',
             'goog:chromeOptions': {
                 args: [
-                    // '--user-agent=Chrome/131.0.6778.86',
-                    // '--headless',
+                    '--user-agent=Chrome/131.0.6778.86',
+                    '--headless',
                     '--disable-gpu',
                     '--window-size=1920,1080', // Set a proper resolution
                     '--disable-dev-shm-usage', // Avoid low memory issues
@@ -33,8 +33,7 @@ export const config: WebdriverIO.Config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
     services: [
-
-       [
+        [
             'image-comparison',
             {
                 baselineFolder: join(process.cwd(), './baseline/'),
@@ -45,7 +44,7 @@ export const config: WebdriverIO.Config = {
                 blockOutStatusBar: true,
                 blockOutToolBar: true,
                 ignoreNothing: true,
-                fullPageScrollTimeout: 2000 
+                fullPageScrollTimeout: 2000
             },
         ],
         'devtools'

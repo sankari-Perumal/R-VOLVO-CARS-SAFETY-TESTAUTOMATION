@@ -1,11 +1,12 @@
 import { browser } from '@wdio/globals';
+import { getEnv } from '../helper/env/env';
 import safetyPage from '../pages/safety-page';
 import reasearchPage from '../pages/reasearchPage';
-import { getEnv } from '../helper/env/env';
-getEnv();
 import { clearStorage } from '../utils/clearSessions';
 import { monitorNetwork } from '../utils/monitorNetwork';
 import { waitForPageContents } from '../utils/waitForPageLoad';
+
+getEnv();
 
 describe('Verify Research page', () => {
     beforeAll(async () => {
@@ -29,7 +30,7 @@ describe('Verify Research page', () => {
         expect(await reasearchPage.verifyPauseBtnDisplay()).toBeTrue();
         await safetyPage.clickOnTab('heritage');
     })
-    
+
     it('show more should expand area and display showless action', async () => {
         await safetyPage.clickOnTab('reasearch');
         expect(await reasearchPage.verifyShowMoreBtnDisplay()).toBeTrue();
@@ -37,7 +38,4 @@ describe('Verify Research page', () => {
         expect(await reasearchPage.verifyQuetionaryAreaExpand()).toBe('true');
         expect(await reasearchPage.verifyShowLessBtn()).toBeTrue();
     })
-
-    
-
 });

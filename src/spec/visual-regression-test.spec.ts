@@ -1,11 +1,12 @@
 import { browser } from '@wdio/globals';
+import { getEnv } from '../helper/env/env';
 import safetyPage from '../pages/safety-page';
 import heritage from '../pages/heritagePage';
-import { getEnv } from '../helper/env/env';
-getEnv();
 import { clearStorage } from '../utils/clearSessions';
 import { monitorNetwork } from '../utils/monitorNetwork';
 import { waitForPageContents } from '../utils/waitForPageLoad';
+
+getEnv();
 
 describe('Visual regression comparison', () => {
     beforeAll(async () => {
@@ -32,8 +33,4 @@ describe('Visual regression comparison', () => {
         const matchPercent = await browser.checkElement(imgElement, tagName);
         expect(matchPercent).toBeLessThan(1);
     });
-
-   
-
-
 });

@@ -6,9 +6,10 @@ import testData from '../test-data/testData.json';
 import { clearStorage } from '../utils/clearSessions';
 import { monitorNetwork } from '../utils/monitorNetwork';
 import { waitForPageContents } from '../utils/waitForPageLoad';
-getEnv();
-describe('Verify Overview section', () => {
 
+getEnv();
+
+describe('Verify Overview section', () => {
     beforeAll(async () => {
         await monitorNetwork(browser);
         await browser.url(process.env.BASEURL!);
